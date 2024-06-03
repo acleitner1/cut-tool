@@ -8,10 +8,10 @@ def main(input):
       print("Must specify an option and a filename") 
    option = input.argv[1]    
    file = input.argv[2]
-   if (option == "-f2"): 
+   if (option[0:2] == "-f"): 
       f = open(file, "r")
       for line in f: 
          line = line.split("\t")
-         print(line[1])
+         print(line[int(option[2])])
 
 main(sys)   
