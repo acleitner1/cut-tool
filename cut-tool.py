@@ -20,6 +20,14 @@ def main(input):
       f = open(file, "r")
       for line in f: 
          line = line.split(delimiter)
-         print(line[int(option[2]) - 1])
+         toprint = option[2:]
+         if (len(toprint)== 1): 
+            print(line[int(toprint) - 1])
+         else: 
+            toprint = toprint.split(",")
+            i = 0
+            while i < len(toprint): 
+               print(line[int(toprint[i]) - 1] + "\t" + line[int(toprint[i+1]) - 1])
+               i+= 2
 
 main(sys)   
