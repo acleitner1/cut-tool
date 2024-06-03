@@ -24,10 +24,14 @@ def main(input):
          if (len(toprint)== 1): 
             print(line[int(toprint) - 1])
          else: 
-            toprint = toprint.split(",")
+            if (toprint.find(",") == -1): 
+               toprint = toprint.split(" ")
+
+            else: 
+               toprint = toprint.split(",")
             i = 0
             while i < len(toprint): 
-               print(line[int(toprint[i]) - 1] + "\t" + line[int(toprint[i+1]) - 1])
+               print(line[int(toprint[i]) - 1] + delimiter + line[int(toprint[i+1]) - 1])
                i+= 2
 
 main(sys)   
