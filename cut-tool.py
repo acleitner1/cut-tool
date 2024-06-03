@@ -20,6 +20,6 @@ def main(input):
       f = open(file, "r")
       for line in f: 
          line = line.split(delimiter)
-         print(line[int(option[2])])
+         print(line[int(option[2]) - 1])
 
 main(sys)   
